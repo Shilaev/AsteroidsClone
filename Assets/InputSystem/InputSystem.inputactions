@@ -1,0 +1,33 @@
+{
+    "name": "InputSystem",
+    "maps": [
+        {
+            "name": "SpaceShip",
+            "id": "8e5a551d-9c31-4aed-aae1-6eaa268e91c4",
+            "actions": [
+                {
+                    "name": "PowerUp",
+                    "type": "Button",
+                    "id": "9a769eb0-0605-4fa1-9d22-807e5480cd2c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "35cf7884-58bf-490a-9ad0-879e54c17d63",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PowerUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
