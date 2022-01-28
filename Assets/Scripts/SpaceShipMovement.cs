@@ -41,7 +41,8 @@ public class SpaceShipMovement : MonoBehaviour
 
         if (isPowerUpHeld)
         {
-            Debug.Log("hello");
+           Rigidbody2D _spaceShipRB = _spaceShip.GetComponent<Rigidbody2D>();
+            _spaceShipRB.AddRelativeForce(Vector2.up * Time.deltaTime * 50f, ForceMode2D.Force);
         }
     }
 
