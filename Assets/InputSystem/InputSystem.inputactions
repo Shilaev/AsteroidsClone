@@ -7,9 +7,25 @@
             "actions": [
                 {
                     "name": "PowerUp",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "9a769eb0-0605-4fa1-9d22-807e5480cd2c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotationLeft",
+                    "type": "Value",
+                    "id": "eeea47b4-3b03-47e4-9d7c-5c695e721a28",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotationRight",
+                    "type": "Value",
+                    "id": "25aa4678-b04c-4047-938c-5b65709c0af6",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 }
@@ -18,11 +34,33 @@
                 {
                     "name": "",
                     "id": "35cf7884-58bf-490a-9ad0-879e54c17d63",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "PowerUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fd40124-fa29-4a95-8b5a-fa0d8c2ef5cc",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0d33f8a-9ccd-4b82-adbd-9d3aff9f326c",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotationRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
