@@ -44,4 +44,17 @@ public class ObjectPool : MonoBehaviour
 
         return null;
     }
+
+    public GameObject GetActivePooledObject()
+    {
+        for (int i = 0; i < _pooledObjects.Count; i++)
+        {
+            if (_pooledObjects[i].activeInHierarchy)
+            {
+                return _pooledObjects[i];
+            }
+        }
+
+        return null;
+    }
 }

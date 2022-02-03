@@ -13,6 +13,12 @@ public class Spawner : MonoBehaviour
         {
             Spawn();
         }
+
+        if (Mouse.current.rightButton.wasReleasedThisFrame)
+        {
+            GameObject spawnObject = ObjectPool._instance.GetActivePooledObject();
+            spawnObject.SetActive(false);
+        }
     }
 
     public void Spawn()
