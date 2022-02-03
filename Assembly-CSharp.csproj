@@ -58,8 +58,9 @@
   <ItemGroup>
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
     <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
-    <Compile Include="Assets\TestFolder\PoolObject.cs" />
-    <Compile Include="Assets\TestFolder\ObjectsPool.cs" />
+    <Compile Include="Assets\TestFolder\Spawner.cs" />
+    <Compile Include="Assets\TestFolder\ObjectPool.cs" />
+    <Compile Include="Assets\TestFolder\PoolElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
