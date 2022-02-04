@@ -57,10 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
-    <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
     <Compile Include="Assets\TestFolder\Spawner.cs" />
-    <Compile Include="Assets\TestFolder\ObjectPool.cs" />
     <Compile Include="Assets\TestFolder\PoolElement.cs" />
+    <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
+    <Compile Include="Assets\TestFolder\PoolsManager.cs" />
+    <Compile Include="Assets\TestFolder\Pool.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
