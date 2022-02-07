@@ -1,22 +1,19 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using ObjectPool;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private string _tag;
-    [SerializeField] private int _size;
-    [SerializeField] private bool _isAutoExpand = false;
-    [SerializeField] private PoolElement _poolElement;
-    private Pool myPool = new Pool();
+
+    [SerializeField] private List<Pool_SO> _pools = new List<Pool_SO>();
+
+    private Pool _bulletsPool = new Pool();
+    // private Pool _asteroidsPool = new Pool();
 
     private void Start()
-    {
-        myPool.Initialize(_tag, _size, _isAutoExpand, _poolElement);
-
+    { 
+        // _bulletsPool.Initialize(MyPool._tag, _size, _isAutoExpand, _poolElement);
+        // _asteroidsPool.Initialize();
     }
 
     private void Update()
@@ -31,6 +28,7 @@ public class Spawner : MonoBehaviour
         //     //
         // }
     }
+
     public void Spawn()
     {
         // GameObject spawnObject = myPool.GetFreeElement().gameObject;

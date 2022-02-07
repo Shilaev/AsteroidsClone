@@ -56,12 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ObjectPool\Pool.cs" />
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
-    <Compile Include="Assets\TestFolder\Spawner.cs" />
-    <Compile Include="Assets\TestFolder\PoolElement.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\PoolElement.cs" />
     <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
-    <Compile Include="Assets\TestFolder\PoolsManager.cs" />
-    <Compile Include="Assets\TestFolder\Pool.cs" />
+    <Compile Include="Assets\Resources\Pool_SO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
