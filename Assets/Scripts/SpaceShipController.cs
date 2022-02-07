@@ -46,13 +46,11 @@ public class SpaceShipController : MonoBehaviour
     private void HandleFire()
     {
         var aim = _spaceShip.GetChild(0);
-        Ray ray = new Ray(aim.position, aim.up);
-        Debug.DrawRay(aim.position, _spaceShip.up * 100f, Color.red);
         if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
-           var spawnObject = PoolSpawner.instance.SpawnPoolObjectWithTag("q");
-           spawnObject.transform.position = aim.position;
-           spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * 100f;
+            var spawnObject = PoolSpawner.instance.SpawnPoolObjectWithTag("q");
+            spawnObject.transform.position = aim.position;
+            spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * 100f;
         }
     }
 
