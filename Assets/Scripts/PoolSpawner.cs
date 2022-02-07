@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public class PoolSpawner : MonoBehaviour
 {
-
     [SerializeField] private List<Pool_SO> _pools_so = new List<Pool_SO>();
     private List<Pool> _pools = new List<Pool>();
 
@@ -26,42 +25,39 @@ public class PoolSpawner : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Mouse.current.leftButton.wasReleasedThisFrame)
-        {
-            Spawn("q");
-        }
-        //
-        // if (Mouse.current.rightButton.wasReleasedThisFrame)
-        // {
-        //     //
-        // }
-    }
+    // private void Update()
+    // {
+    //     if (Mouse.current.leftButton.wasReleasedThisFrame)
+    //     {
+    //         SpawnPoolObjectWithTag("q");
+    //     }
+    //
+    // if (Mouse.current.rightButton.wasReleasedThisFrame)
+    // {
+    //     //
+    // }
+    // }
 
-    // выбираю что спавнить, по тегу
-    public void Spawn(string tag)
+    public void SpawnPoolObjectWithTag(string tag)
     {
         foreach (var pool in _pools)
         {
             if (pool.Tag == tag)
             {
                 GameObject spawnObject = pool.GetFreeElement().gameObject;
-                
+
                 if (spawnObject != null)
                 {
                     spawnObject.SetActive(true);
-                
+
                     var rand = Random.Range(-2, 2);
                     var rand2 = Random.Range(-2, 2);
                     spawnObject.transform.position = new Vector3(rand, rand2);
-                
+
                     var randC1 = Random.ColorHSV();
                     spawnObject.GetComponent<SpriteRenderer>().color = randC1;
                 }
-
             }
         }
-
     }
 }
