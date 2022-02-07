@@ -22,15 +22,12 @@ namespace ObjectPool
             _isAutoExpand = isAutoExpand;
             _poolElement = poolElement;
 
-            for (int i = 0; i < _size; i++)
-            {
-                AddElement(_poolElement);
-            }
+            for (var i = 0; i < _size; i++) AddElement(_poolElement);
         }
 
         private void AddElement(PoolElement poolElement)
         {
-            PoolElement temp = Instantiate(poolElement);
+            var temp = Instantiate(poolElement);
             temp.gameObject.SetActive(false);
             _elements.Add(temp);
         }
@@ -38,12 +35,8 @@ namespace ObjectPool
         public PoolElement GetFreeElement()
         {
             foreach (var poolElement in _elements)
-            {
                 if (poolElement.gameObject.activeInHierarchy == false)
-                {
                     return poolElement;
-                }
-            }
 
             if (_isAutoExpand)
                 AddElement(_elements[0]);

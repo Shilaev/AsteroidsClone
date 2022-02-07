@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b41f534674582b47bc245a78dab20c0, type: 3}
-  m_Name: MyPool
+  m_Name: MyPool 1
   m_EditorClassIdentifier: 
-  tag: q
+  tag: qwe
   size: 12
   isAutoExpand: 1
-  prefab: {fileID: 2773493384324981254, guid: 2e45d30e3c493b241bdf141712f77e30, type: 3}
+  prefab: {fileID: -1211952135670791257, guid: bee0c7a1ee3545949adce97e16148c92, type: 3}

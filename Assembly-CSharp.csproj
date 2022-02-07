@@ -61,7 +61,7 @@
     <Compile Include="Assets\Scripts\PoolSpawner.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\PoolElement.cs" />
     <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
-    <Compile Include="Assets\Resources\Pool_SO.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool_SO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
