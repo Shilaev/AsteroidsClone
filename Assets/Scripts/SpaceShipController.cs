@@ -6,6 +6,7 @@ public class SpaceShipController : MonoBehaviour
 {
     [Range(0f, 1000f)] [SerializeField] private float _movementSpeed = 1000f;
     [Range(0f, 1000f)] [SerializeField] private float _rotationSpeed = 500;
+    [Range(0f, 100f)] [SerializeField] private float bulletVelocity = 40f;
     private InputSystem _input;
     private Transform _spaceShip;
 
@@ -27,9 +28,9 @@ public class SpaceShipController : MonoBehaviour
         var isRotationLeftHeld = _input.SpaceShip.RotationLeft.ReadValue<float>() > 0.1f;
         var isRotationRightHeld = _input.SpaceShip.RotationRight.ReadValue<float>() > 0.1f;
 
-        if (isRotationLeftHeld) _spaceShip.Rotate(new Vector3(0, 0, 1), _rotationSpeed * Time.deltaTime);
+        if (isRotationLeftHeld) _spaceShip.Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
 
-        if (isRotationRightHeld) _spaceShip.Rotate(new Vector3(0, 0, -1), _rotationSpeed * Time.deltaTime);
+        if (isRotationRightHeld) _spaceShip.Rotate(Vector3.back, _rotationSpeed * Time.deltaTime);
     }
 
     private void HandlePowerUp()
@@ -48,9 +49,10 @@ public class SpaceShipController : MonoBehaviour
         var aim = _spaceShip.GetChild(0);
         if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
-            var spawnObject = PoolSpawner.instance.SpawnPoolObjectWithTag("q");
+            var spawnObject = PoolSpawner.instance.SpawnPoolObjectWithTag("bullet");
             spawnObject.transform.position = aim.position;
-            spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * 100f;
+
+            spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * bulletVelocity;
         }
     }
 
