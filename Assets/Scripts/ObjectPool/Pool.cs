@@ -13,6 +13,8 @@ namespace ObjectPool
         private PoolElement _poolElement;
         private List<PoolElement> _elements = new List<PoolElement>();
 
+        public string Tag => _tag;
+
         public void Initialize(string tag, int size, bool isAutoExpand, PoolElement poolElement)
         {
             _tag = tag;
@@ -48,15 +50,5 @@ namespace ObjectPool
 
             throw new Exception($"No elements in {_tag} pool");
         }
-
-        // {
-        // public Pool(string tag, int size, bool isAutoExpand, PoolElement poolElement)
-        //     _tag = tag;
-        //     _size = size;
-        //     _isAutoExpand = isAutoExpand;
-        //     _poolElement = poolElement;
-        //
-        //     Initialize();
-        // }
     }
 }
