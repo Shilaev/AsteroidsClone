@@ -13,7 +13,7 @@ namespace ObjectPool
 
         private IEnumerator WaitSomeTime()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
             gameObject.SetActive(false);
         }
     }

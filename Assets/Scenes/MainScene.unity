@@ -316,5 +316,13 @@ PrefabInstance:
       propertyPath: _spaceShip
       value: 
       objectReference: {fileID: 442082941}
+    - target: {fileID: 8682120828524190121, guid: 0c12468cb59053742a1678833730ba92, type: 3}
+      propertyPath: _movementSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682120828524190121, guid: 0c12468cb59053742a1678833730ba92, type: 3}
+      propertyPath: _rotationSpeed
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c12468cb59053742a1678833730ba92, type: 3}

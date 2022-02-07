@@ -1,11 +1,23 @@
+using System;
 using System.Collections.Generic;
 using ObjectPool;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PoolSpawner : MonoBehaviour
 {
     [SerializeField] private List<Pool_SO> _pools_so = new List<Pool_SO>();
     private readonly List<Pool> _pools = new List<Pool>();
+
+    public static PoolSpawner instance;
+
+    private void Awake()
+    {
+        if (!instance)
+            instance = this;
+        else
+            Destroy(instance);
+    }
 
     private void Start()
     {
@@ -19,9 +31,10 @@ public class PoolSpawner : MonoBehaviour
         foreach (var pool in _pools) Debug.Log(pool.Tag);
     }
 
-    public void SpawnPoolObjectWithTag(string tag)
+    public GameObject SpawnPoolObjectWithTag(string tag)
     {
         foreach (var pool in _pools)
+        {
             if (pool.Tag == tag)
             {
                 var spawnObject = pool.GetFreeElement().gameObject;
@@ -30,13 +43,17 @@ public class PoolSpawner : MonoBehaviour
                 {
                     spawnObject.SetActive(true);
 
-                    var rand = Random.Range(-2, 2);
-                    var rand2 = Random.Range(-2, 2);
-                    spawnObject.transform.position = new Vector3(rand, rand2);
-
-                    var randC1 = Random.ColorHSV();
-                    spawnObject.GetComponent<SpriteRenderer>().color = randC1;
+                    // var rand = Random.Range(-2, 2);
+                    // var rand2 = Random.Range(-2, 2);
+                    // spawnObject.transform.position = new Vector3(rand, rand2);
+                    //
+                    // var randC1 = Random.ColorHSV();
+                    // spawnObject.GetComponent<SpriteRenderer>().color = randC1;
+                    return spawnObject;
                 }
             }
+        }
+
+        throw new Exception("Zero objects");
     }
 }
