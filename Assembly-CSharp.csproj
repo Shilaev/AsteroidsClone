@@ -59,13 +59,14 @@
     <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool_SO.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool.cs" />
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool\PoolSpawner.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool\PoolsManager.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\PoolElement.cs" />
-    <Compile Include="Assets\Scripts\SpaceShipController.cs" />
+    <Compile Include="Assets\Scripts\SpaceShip\SpaceShipController.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Bullet.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraBordersChecker.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraBordersTeleporter.cs" />
+    <Compile Include="Assets\Scripts\Camera Features\CameraBordersChecker.cs" />
+    <Compile Include="Assets\Scripts\Camera Features\CameraBordersTeleporter.cs" />
+    <Compile Include="Assets\Scripts\AsteroidsSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

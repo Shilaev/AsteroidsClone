@@ -1,19 +1,18 @@
-using System;
+using ObjectPool;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class SpaceShipController : MonoBehaviour
 {
     [Range(0f, 1000f)] [SerializeField] private float _movementSpeed = 1000f;
     [Range(0f, 1000f)] [SerializeField] private float _rotationSpeed = 500;
-    [Range(0f, 100f)] [SerializeField] private float bulletVelocity = 20f;
+    [Range(0f, 100f)] [SerializeField] private float _bulletVelocity = 20f;
     private InputSystem _input;
     private Transform _spaceShip;
 
     private void Awake()
     {
         _spaceShip = transform;
-        
+
         _input = new InputSystem();
         _input.SpaceShip.SimpleShoot.performed += ctx => { HandleFire(); };
     }
@@ -22,6 +21,16 @@ public class SpaceShipController : MonoBehaviour
     {
         HandlePowerUp();
         HandleRotation();
+    }
+
+    private void OnEnable()
+    {
+        _input.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _input.Disable();
     }
 
     private void HandleRotation()
@@ -48,19 +57,9 @@ public class SpaceShipController : MonoBehaviour
     {
         var aim = _spaceShip.GetChild(0);
 
-        var spawnObject = PoolSpawner.SpawnPoolObjectWithTag("bullet");
+        var spawnObject = PoolsManager.SpawnPoolObjectWithTag("bullet");
         spawnObject.transform.position = aim.position;
 
-        spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * bulletVelocity;
-    }
-
-    private void OnEnable()
-    {
-        _input.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _input.Disable();
+        spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * _bulletVelocity;
     }
 }
