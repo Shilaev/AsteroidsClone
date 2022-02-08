@@ -7,6 +7,11 @@ namespace CameraFeatures
     {
         public void Update()
         {
+            if (CameraBordersChecker.isOutOfBorders(transform)) MoveToOppositeSide();
+        }
+
+        private void MoveToOppositeSide()
+        {
             var positionX = transform.position.x;
             var positionY = transform.position.y;
 

@@ -34,6 +34,6 @@ public class PoolSpawner : MonoBehaviour
             }
         }
 
-        throw new Exception("Zero objects");
+        throw new Exception($"pool with tag '{tag}' is empty.");
     }
 }
