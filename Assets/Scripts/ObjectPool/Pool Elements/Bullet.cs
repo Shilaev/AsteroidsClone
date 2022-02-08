@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using CameraFeatures;
+using UnityEngine;
 
 namespace ObjectPool
 {
@@ -9,6 +11,14 @@ namespace ObjectPool
         private void OnCollisionEnter2D(Collision2D other)
         {
             gameObject.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if (CameraBordersChecker.isOutOfBorders(transform))
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

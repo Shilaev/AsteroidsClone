@@ -8,9 +8,9 @@ namespace ObjectPool
     {
         private string _tag;
         private int _size;
-        private bool _isAutoExpand = false;
+        private bool _isAutoExpand;
         private PoolElement _poolElement;
-        private List<PoolElement> _elements = new List<PoolElement>();
+        private List<PoolElement> _elements;
 
         public string Tag => _tag;
 
@@ -20,6 +20,7 @@ namespace ObjectPool
             _size = size;
             _isAutoExpand = isAutoExpand;
             _poolElement = poolElement;
+            _elements = new List<PoolElement>();
 
             for (var i = 0; i < _size; i++) AddElement(_poolElement);
         }

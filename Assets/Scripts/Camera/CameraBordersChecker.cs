@@ -15,5 +15,19 @@ namespace CameraFeatures
             screenInCameraCoordsX = _camera.aspect * _camera.orthographicSize;
             screenInCameraCoordsY = _camera.orthographicSize;
         }
+
+        public static bool isOutOfBorders(Transform item)
+        {
+            var positionX = item.position.x;
+            var positionY = item.position.y;
+
+            if (positionX > screenInCameraCoordsX ||
+                positionX < -screenInCameraCoordsX ||
+                positionY > screenInCameraCoordsY ||
+                positionY < -screenInCameraCoordsY)
+                return true;
+
+            return false;
+        }
     }
 }
