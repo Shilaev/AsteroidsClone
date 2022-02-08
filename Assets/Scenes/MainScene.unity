@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 1987752782}
   - component: {fileID: 1987752781}
   m_Layer: 0
-  m_Name: PoolsManager
+  m_Name: Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987752780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cba1abb856b4cd4b9b30a4f025c1b7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 61a42f42e9aa4e229d04ce71ad63b433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _pools_so:

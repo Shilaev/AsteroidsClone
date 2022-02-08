@@ -59,7 +59,6 @@
     <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool_SO.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool.cs" />
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool\PoolsManager.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\PoolElement.cs" />
     <Compile Include="Assets\Scripts\SpaceShip\SpaceShipController.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Bullet.cs" />
