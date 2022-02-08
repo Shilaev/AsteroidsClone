@@ -7,9 +7,9 @@
             "actions": [
                 {
                     "name": "PowerUp",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "9a769eb0-0605-4fa1-9d22-807e5480cd2c",
-                    "expectedControlType": "",
+                    "expectedControlType": "Double",
                     "processors": "",
                     "interactions": ""
                 },
@@ -17,7 +17,7 @@
                     "name": "RotationLeft",
                     "type": "Value",
                     "id": "eeea47b4-3b03-47e4-9d7c-5c695e721a28",
-                    "expectedControlType": "",
+                    "expectedControlType": "Double",
                     "processors": "",
                     "interactions": ""
                 },
@@ -25,7 +25,15 @@
                     "name": "RotationRight",
                     "type": "Value",
                     "id": "25aa4678-b04c-4047-938c-5b65709c0af6",
-                    "expectedControlType": "",
+                    "expectedControlType": "Double",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "SimpleShoot",
+                    "type": "Button",
+                    "id": "d0d5cef0-7c89-4356-bf99-f15d33a5c647",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
@@ -61,6 +69,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotationRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a97ff6a5-fb66-4055-9e87-6734fbf3ad93",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SimpleShoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

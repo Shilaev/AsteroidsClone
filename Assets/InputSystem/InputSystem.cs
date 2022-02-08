@@ -20,9 +20,9 @@ public class @InputSystem : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""PowerUp"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""9a769eb0-0605-4fa1-9d22-807e5480cd2c"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Double"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -30,7 +30,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""name"": ""RotationLeft"",
                     ""type"": ""Value"",
                     ""id"": ""eeea47b4-3b03-47e4-9d7c-5c695e721a28"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Double"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -38,7 +38,15 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""name"": ""RotationRight"",
                     ""type"": ""Value"",
                     ""id"": ""25aa4678-b04c-4047-938c-5b65709c0af6"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Double"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SimpleShoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""d0d5cef0-7c89-4356-bf99-f15d33a5c647"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -76,6 +84,17 @@ public class @InputSystem : IInputActionCollection, IDisposable
                     ""action"": ""RotationRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a97ff6a5-fb66-4055-9e87-6734fbf3ad93"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SimpleShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -87,6 +106,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
         m_SpaceShip_PowerUp = m_SpaceShip.FindAction("PowerUp", throwIfNotFound: true);
         m_SpaceShip_RotationLeft = m_SpaceShip.FindAction("RotationLeft", throwIfNotFound: true);
         m_SpaceShip_RotationRight = m_SpaceShip.FindAction("RotationRight", throwIfNotFound: true);
+        m_SpaceShip_SimpleShoot = m_SpaceShip.FindAction("SimpleShoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -139,6 +159,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
     private readonly InputAction m_SpaceShip_PowerUp;
     private readonly InputAction m_SpaceShip_RotationLeft;
     private readonly InputAction m_SpaceShip_RotationRight;
+    private readonly InputAction m_SpaceShip_SimpleShoot;
     public struct SpaceShipActions
     {
         private @InputSystem m_Wrapper;
@@ -146,6 +167,7 @@ public class @InputSystem : IInputActionCollection, IDisposable
         public InputAction @PowerUp => m_Wrapper.m_SpaceShip_PowerUp;
         public InputAction @RotationLeft => m_Wrapper.m_SpaceShip_RotationLeft;
         public InputAction @RotationRight => m_Wrapper.m_SpaceShip_RotationRight;
+        public InputAction @SimpleShoot => m_Wrapper.m_SpaceShip_SimpleShoot;
         public InputActionMap Get() { return m_Wrapper.m_SpaceShip; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -164,6 +186,9 @@ public class @InputSystem : IInputActionCollection, IDisposable
                 @RotationRight.started -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnRotationRight;
                 @RotationRight.performed -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnRotationRight;
                 @RotationRight.canceled -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnRotationRight;
+                @SimpleShoot.started -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnSimpleShoot;
+                @SimpleShoot.performed -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnSimpleShoot;
+                @SimpleShoot.canceled -= m_Wrapper.m_SpaceShipActionsCallbackInterface.OnSimpleShoot;
             }
             m_Wrapper.m_SpaceShipActionsCallbackInterface = instance;
             if (instance != null)
@@ -177,6 +202,9 @@ public class @InputSystem : IInputActionCollection, IDisposable
                 @RotationRight.started += instance.OnRotationRight;
                 @RotationRight.performed += instance.OnRotationRight;
                 @RotationRight.canceled += instance.OnRotationRight;
+                @SimpleShoot.started += instance.OnSimpleShoot;
+                @SimpleShoot.performed += instance.OnSimpleShoot;
+                @SimpleShoot.canceled += instance.OnSimpleShoot;
             }
         }
     }
@@ -186,5 +214,6 @@ public class @InputSystem : IInputActionCollection, IDisposable
         void OnPowerUp(InputAction.CallbackContext context);
         void OnRotationLeft(InputAction.CallbackContext context);
         void OnRotationRight(InputAction.CallbackContext context);
+        void OnSimpleShoot(InputAction.CallbackContext context);
     }
 }

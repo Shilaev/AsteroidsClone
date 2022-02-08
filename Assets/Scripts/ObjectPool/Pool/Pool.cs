@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace ObjectPool
 {
-    [AddComponentMenu("Object Pool/Pool")]
     public class Pool : MonoBehaviour
     {
         private string _tag;
@@ -24,7 +23,7 @@ namespace ObjectPool
 
             for (var i = 0; i < _size; i++) AddElement(_poolElement);
         }
-
+        
         private void AddElement(PoolElement poolElement)
         {
             var temp = Instantiate(poolElement);
