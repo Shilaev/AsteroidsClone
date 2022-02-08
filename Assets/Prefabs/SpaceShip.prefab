@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3481672501260026697}
   - component: {fileID: -4971837186295523952}
+  - component: {fileID: 1915373025}
   - component: {fileID: 8682120828524190121}
   - component: {fileID: 944589944}
   m_Layer: 0
@@ -134,13 +135,29 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!70 &1915373025
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581952962099803329}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.18838775}
+  m_Size: {x: 1.4218322, y: 1.4514984}
+  m_Direction: 0
 --- !u!114 &8682120828524190121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementSpeed: 1000
   _rotationSpeed: 362
-  bulletVelocity: 20
+  _bulletVelocity: 20
 --- !u!114 &944589944
 MonoBehaviour:
   m_ObjectHideFlags: 0
