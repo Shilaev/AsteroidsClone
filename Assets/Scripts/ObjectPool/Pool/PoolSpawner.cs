@@ -6,17 +6,7 @@ using UnityEngine;
 public class PoolSpawner : MonoBehaviour
 {
     [SerializeField] private List<Pool_SO> _pools_so = new List<Pool_SO>();
-    private readonly List<Pool> _pools = new List<Pool>();
-
-    public static PoolSpawner instance;
-
-    private void Awake()
-    {
-        if (!instance)
-            instance = this;
-        else
-            Destroy(instance);
-    }
+    private static List<Pool> _pools = new List<Pool>();
 
     private void Start()
     {
@@ -28,7 +18,7 @@ public class PoolSpawner : MonoBehaviour
         }
     }
 
-    public GameObject SpawnPoolObjectWithTag(string tag)
+    public static GameObject SpawnPoolObjectWithTag(string tag)
     {
         foreach (var pool in _pools)
         {

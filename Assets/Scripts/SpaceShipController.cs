@@ -48,7 +48,7 @@ public class SpaceShipController : MonoBehaviour
     {
         var aim = _spaceShip.GetChild(0);
 
-        var spawnObject = PoolSpawner.instance.SpawnPoolObjectWithTag("bullet");
+        var spawnObject = PoolSpawner.SpawnPoolObjectWithTag("bullet");
         spawnObject.transform.position = aim.position;
 
         spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * bulletVelocity;
