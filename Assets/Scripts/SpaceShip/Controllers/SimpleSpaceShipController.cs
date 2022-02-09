@@ -1,19 +1,21 @@
 using ObjectPool;
 using UnityEngine;
 
-public class SpaceShipController : MonoBehaviour
+[AddComponentMenu("Controllers/SpaceShipController")]
+public class SimpleSpaceShipController : MonoBehaviour
 {
     [Range(0f, 1000f)] [SerializeField] private float _movementSpeed = 1000f;
     [Range(0f, 1000f)] [SerializeField] private float _rotationSpeed = 500;
     [Range(0f, 100f)] [SerializeField] private float _bulletVelocity = 20f;
-    private InputSystem _input;
-    private Transform _spaceShip;
+    [SerializeField] private SpaceShip _spaceShip;
+
     private Transform _aim;
+    private InputSystem _input;
 
     private void Awake()
     {
-        _spaceShip = transform;
-        _aim = _spaceShip.GetChild(0);
+        _spaceShip = GetComponent<SpaceShip>();
+        _aim = _spaceShip.GetComponent<Transform>().GetChild(0);
 
         _input = new InputSystem();
         _input.SpaceShip.SimpleShoot.performed += ctx => HandleFire();
@@ -40,8 +42,8 @@ public class SpaceShipController : MonoBehaviour
         var isRotationLeftHeld = _input.SpaceShip.RotationLeft.ReadValue<float>() > 0.1f;
         var isRotationRightHeld = _input.SpaceShip.RotationRight.ReadValue<float>() > 0.1f;
 
-        if (isRotationLeftHeld) _spaceShip.Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
-        if (isRotationRightHeld) _spaceShip.Rotate(Vector3.back, _rotationSpeed * Time.deltaTime);
+        if (isRotationLeftHeld) _spaceShip.GetComponent<Transform>().Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
+        if (isRotationRightHeld) _spaceShip.GetComponent<Transform>().Rotate(Vector3.back, _rotationSpeed * Time.deltaTime);
     }
 
     private void HandlePowerUp()

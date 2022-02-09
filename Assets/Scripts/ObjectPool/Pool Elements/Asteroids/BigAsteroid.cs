@@ -9,8 +9,8 @@ namespace ObjectPool
         {
             if (other.tag == "Bullet")
             {
-                AsteroidsSpawner.SpawnSmallAsteroid(transform);
-                AsteroidsSpawner.SpawnSmallAsteroid(transform);
+                AsteroidSpawner.SpawnSmallAsteroid(transform);
+                AsteroidSpawner.SpawnSmallAsteroid(transform);
                 gameObject.SetActive(false);
             }
         }

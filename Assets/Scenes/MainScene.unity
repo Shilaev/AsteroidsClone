@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf8db67a42a8214c95a38a8cb420c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
 --- !u!4 &246805915
 Transform:
   m_ObjectHideFlags: 0
@@ -377,5 +376,6 @@ PrefabInstance:
       propertyPath: _bulletVelocity
       value: 25.7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8682120828524190121, guid: 0c12468cb59053742a1678833730ba92, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c12468cb59053742a1678833730ba92, type: 3}

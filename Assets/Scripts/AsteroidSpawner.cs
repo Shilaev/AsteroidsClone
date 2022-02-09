@@ -3,7 +3,8 @@ using ObjectPool;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class AsteroidsSpawner : MonoBehaviour
+[AddComponentMenu("Controllers/AsteroidSpawner")]
+public class AsteroidSpawner : MonoBehaviour
 {
     private void Update()
     {
@@ -13,7 +14,6 @@ public class AsteroidsSpawner : MonoBehaviour
     public static void SpawnBigAsteroid()
     {
         var newBigAsteroid = Pool.GetElementFromPoolWithTag("BigAsteroids");
-
         newBigAsteroid.transform.position = new Vector2(CameraBordersChecker.screenInCameraCoordsX + 20f,
             CameraBordersChecker.screenInCameraCoordsY + 20f);
 
