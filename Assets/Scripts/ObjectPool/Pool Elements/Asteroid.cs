@@ -10,11 +10,12 @@ namespace ObjectPool
         // get damage when collide with bullet
         // destroy when hp is lover then 0
         // Moves randomly
-
-        // Randomly move from A to way point B
-        // when asteroid on way point B - generate new way point B
-
-        private Transform targetPosition;
-
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag == "Bullet")
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 }
