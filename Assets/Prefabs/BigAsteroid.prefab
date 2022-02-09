@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6364772547048709005}
   - component: {fileID: 6454916274343514033}
   - component: {fileID: -5244296569046104342}
-  - component: {fileID: 8411405199982721806}
+  - component: {fileID: 3564356995875202146}
   - component: {fileID: -8951231618805106434}
   m_Layer: 0
   m_Name: BigAsteroid
@@ -124,7 +124,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.99999994, y: 1.9999999}
   m_Direction: 0
---- !u!114 &8411405199982721806
+--- !u!114 &3564356995875202146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 185008084903420780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd090b4ca9b44d5abeaef7dcda2c0c06, type: 3}
+  m_Script: {fileID: 11500000, guid: 87441ec6281441d885ab064819e35553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-8951231618805106434

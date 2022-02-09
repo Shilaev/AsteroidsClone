@@ -15,4 +15,4 @@ MonoBehaviour:
   tag: SmallAsteroids
   size: 40
   isAutoExpand: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: -406520213015592175, guid: ae5c5571d9f134b4ea34f79f73da05bb, type: 3}

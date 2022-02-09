@@ -1,4 +1,3 @@
-using System;
 using CameraFeatures;
 using ObjectPool;
 using UnityEngine;
@@ -6,24 +5,35 @@ using UnityEngine.InputSystem;
 
 public class AsteroidsSpawner : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-
     private void Update()
     {
-        if (Keyboard.current.fKey.wasReleasedThisFrame)
-        {
-            SpawnBigAsteroid();
-        }
+        if (Keyboard.current.fKey.wasReleasedThisFrame) SpawnBigAsteroid();
     }
 
     public static void SpawnBigAsteroid()
     {
-        Pool.GetElementFromPoolWithTag("BigAsteroids");
+        var newBigAsteroid = Pool.GetElementFromPoolWithTag("BigAsteroids");
+
+        newBigAsteroid.transform.position = new Vector2(CameraBordersChecker.screenInCameraCoordsX + 20f,
+            CameraBordersChecker.screenInCameraCoordsY + 20f);
+
+        SetUpNewAsteroid(newBigAsteroid);
     }
 
-    public static void SpawnSmallAsteroid()
+    public static void SpawnSmallAsteroid(Transform spawnPoint)
     {
-        // Pool.GetElementFromPoolWithTag("SmallAsteroids");
-        Debug.Log("SmallAsteroid");
+        var newSmallAsteroid = Pool.GetElementFromPoolWithTag("SmallAsteroids");
+        newSmallAsteroid.transform.position = spawnPoint.position;
+
+        SetUpNewAsteroid(newSmallAsteroid);
+    }
+
+    private static void SetUpNewAsteroid(GameObject newAsteroid)
+    {
+        var randomForceDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        var randomForceValue = Random.Range(50f, 200f);
+        newAsteroid.GetComponent<Rigidbody2D>().AddForce(randomForceDirection * randomForceValue, ForceMode2D.Force);
+
+        newAsteroid.GetComponent<SpriteRenderer>().color = Random.ColorHSV();
     }
 }

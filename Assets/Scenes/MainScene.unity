@@ -295,6 +295,7 @@ MonoBehaviour:
   _pools_so:
   - {fileID: 11400000, guid: 4cc13d246784b1f4790488e64d9517f6, type: 2}
   - {fileID: 11400000, guid: 33e1dcd23c091ec498334bd890f80fa3, type: 2}
+  - {fileID: 11400000, guid: 52116ee262efda94992df43498187150, type: 2}
 --- !u!4 &1987752782
 Transform:
   m_ObjectHideFlags: 0
@@ -366,7 +367,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8682120828524190121, guid: 0c12468cb59053742a1678833730ba92, type: 3}
       propertyPath: _movementSpeed
-      value: 500
+      value: 496
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682120828524190121, guid: 0c12468cb59053742a1678833730ba92, type: 3}
+      propertyPath: _rotationSpeed
+      value: 261
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682120828524190121, guid: 0c12468cb59053742a1678833730ba92, type: 3}
+      propertyPath: _bulletVelocity
+      value: 25.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c12468cb59053742a1678833730ba92, type: 3}

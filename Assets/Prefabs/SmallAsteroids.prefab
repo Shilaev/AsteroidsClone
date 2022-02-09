@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6364772547048709005}
   - component: {fileID: 6454916274343514033}
   - component: {fileID: -5244296569046104342}
-  - component: {fileID: 8411405199982721806}
   - component: {fileID: -8951231618805106434}
+  - component: {fileID: -406520213015592175}
   m_Layer: 0
   m_Name: SmallAsteroids
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 185008084903420780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.22298655, y: 0.11269211, z: 0.19181637}
+  m_LocalScale: {x: 0.3649423, y: 0.18443318, z: 0.31392884}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -124,18 +124,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.99999994, y: 1.9999999}
   m_Direction: 0
---- !u!114 &8411405199982721806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185008084903420780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd090b4ca9b44d5abeaef7dcda2c0c06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-8951231618805106434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,5 +134,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 262bb1ed97870064dacfe19c8def30b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-406520213015592175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185008084903420780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 422fc39e03394a0a887fe1a6c6e1c46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

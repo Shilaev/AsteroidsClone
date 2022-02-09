@@ -1,4 +1,5 @@
-﻿using CameraFeatures;
+﻿using System;
+using CameraFeatures;
 using UnityEngine;
 
 namespace ObjectPool
@@ -11,8 +12,7 @@ namespace ObjectPool
             if (CameraBordersChecker.isOutOfBorders(transform)) gameObject.SetActive(false);
         }
 
-        // destroy when collide with something
-        private void OnCollisionEnter2D(Collision2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             gameObject.SetActive(false);
         }

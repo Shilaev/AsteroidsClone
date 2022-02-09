@@ -57,15 +57,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool_SO.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Bullet.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Bullets\Bullet.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids\Asteroid.cs" />
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
     <Compile Include="Assets\Scripts\AsteroidsSpawner.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersChecker.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\PoolElement.cs" />
     <Compile Include="Assets\Scripts\SpaceShip\SpaceShipController.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersTeleporter.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids\SmallAsteroid.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids\BigAsteroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
