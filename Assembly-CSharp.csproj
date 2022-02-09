@@ -59,17 +59,17 @@
     <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool_SO.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Bullets\Bullet.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Asteroids\Asteroid.cs" />
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
-    <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Controllers\AsteroidSpawner.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersChecker.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\PoolElement.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\Controllers\SimpleSpaceShipController.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\Controllers\SimpleSpaceShipController.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersTeleporter.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids\SmallAsteroid.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids\BigAsteroid.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\SpaceShips\SpaceShip.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\SpaceShips\SimpleSpaceShip.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Asteroids\SmallAsteroid.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Asteroids\BigAsteroid.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\SpaceShips\SpaceShip.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\SpaceShips\SimpleSpaceShip.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
