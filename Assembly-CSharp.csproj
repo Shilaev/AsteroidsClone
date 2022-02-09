@@ -68,8 +68,8 @@
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersTeleporter.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids\SmallAsteroid.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroids\BigAsteroid.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\SpaceShip.cs" />
-    <Compile Include="Assets\Scripts\SpaceShip\SimpleSpaceShip.cs" />
+    <Compile Include="Assets\Scripts\SpaceShip\SpaceShips\SpaceShip.cs" />
+    <Compile Include="Assets\Scripts\SpaceShip\SpaceShips\SimpleSpaceShip.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
