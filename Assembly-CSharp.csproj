@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Asteroids\BigAsteroid.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\SpaceShips\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\SpaceShips\SimpleSpaceShip.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

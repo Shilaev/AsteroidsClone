@@ -1,14 +1,29 @@
+using System;
+using System.Runtime.InteropServices.ComTypes;
 using CameraFeatures;
 using ObjectPool;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 [AddComponentMenu("Controllers/AsteroidSpawner")]
 public class AsteroidSpawner : MonoBehaviour
 {
     private void Update()
     {
-        if (Keyboard.current.fKey.wasReleasedThisFrame) SpawnBigAsteroid();
+        // if (Keyboard.current.fKey.wasReleasedThisFrame) SpawnBigAsteroid();
+    }
+
+    private void Start()
+    {
+
+        GameManager.instance.OnGameStart.AddListener(delegate
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                SpawnBigAsteroid();
+            }
+        });
     }
 
     public static void SpawnBigAsteroid()

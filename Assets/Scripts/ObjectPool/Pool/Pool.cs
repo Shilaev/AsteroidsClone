@@ -23,7 +23,7 @@ namespace ObjectPool
         #region PrivateMethods
         private void Start()
         {
-            Initialise();
+            GameManager.instance.OnGameSetup.AddListener(Initialise);
         }
 
         /// <summary>
