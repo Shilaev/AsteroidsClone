@@ -44,9 +44,9 @@ public class @InputSystem : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""SimpleShoot"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""d0d5cef0-7c89-4356-bf99-f15d33a5c647"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Double"",
                     ""processors"": """",
                     ""interactions"": """"
                 }

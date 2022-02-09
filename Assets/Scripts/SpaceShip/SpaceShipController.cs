@@ -8,13 +8,15 @@ public class SpaceShipController : MonoBehaviour
     [Range(0f, 100f)] [SerializeField] private float _bulletVelocity = 20f;
     private InputSystem _input;
     private Transform _spaceShip;
+    private Transform _aim;
 
     private void Awake()
     {
         _spaceShip = transform;
+        _aim = _spaceShip.GetChild(0);
 
         _input = new InputSystem();
-        _input.SpaceShip.SimpleShoot.performed += ctx => { HandleFire(); };
+        _input.SpaceShip.SimpleShoot.performed += ctx => HandleFire();
     }
 
     private void Update()
@@ -53,13 +55,11 @@ public class SpaceShipController : MonoBehaviour
         }
     }
 
+
     private void HandleFire()
     {
-        var aim = _spaceShip.GetChild(0);
-
-        var spawnObject = Pool.GetElementFromPoolWithTag("bullet");
-        spawnObject.transform.position = aim.position;
-
+        var spawnObject = Pool.GetElementFromPoolWithTag("Bullet");
+        spawnObject.transform.position = _aim.position;
         spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * _bulletVelocity;
     }
 }
