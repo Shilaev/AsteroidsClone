@@ -56,23 +56,23 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool_SO.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Bullets\Bullet.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool\Pool.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Asteroids\Asteroid.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Asteroids\SmallAsteroid.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool\Pool_SO.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\Bullets\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool\Pool.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\Asteroid\Asteroids\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\Asteroid\Asteroids\SmallAsteroid.cs" />
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Asteroids\BigAsteroid.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\SpaceShips\SimpleSpaceShip.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\Asteroid\Controllers\AsteroidSpawner.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\Asteroid\Asteroids\BigAsteroid.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\SpaceShip\SpaceShips\SimpleSpaceShip.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\Asteroid\Controllers\AsteroidSpawner.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersChecker.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\PoolElement.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\Controllers\SimpleSpaceShipController.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\SpaceShips\SpaceShip.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\PoolElement.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\SpaceShip\Controllers\SimpleSpaceShipController.cs" />
+    <Compile Include="Assets\Scripts\Object Pool\Pool Elements\SpaceShip\SpaceShips\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersTeleporter.cs" />
-    <Compile Include="Assets\Scripts\UI\Menu.cs" />
-    <Compile Include="Assets\Scripts\UI\UI.cs" />
+    <Compile Include="Assets\Scripts\UI Elements\Menu.cs" />
+    <Compile Include="Assets\Scripts\UI Elements\UI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
