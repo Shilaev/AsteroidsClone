@@ -103,7 +103,6 @@ namespace ObjectPool
 
                     if (spawnObject != null)
                     {
-                        spawnObject.SetActive(true);
                         return spawnObject;
                     }
                 }

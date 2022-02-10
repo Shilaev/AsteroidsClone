@@ -28,11 +28,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Mouse.current.leftButton.wasReleasedThisFrame)
-        {
-            AsteroidSpawner.SpawnAsteroid(1, "BigAsteroids", Vector3.zero);
-        }
-
         if (Keyboard.current.fKey.wasReleasedThisFrame)
         {
             StartGame();
@@ -55,6 +50,11 @@ public class GameManager : MonoBehaviour
         var asteroidStartPosition = new Vector2(CameraBordersChecker.screenInCameraCoordsX + 20f,
                    CameraBordersChecker.screenInCameraCoordsY + 20f);
         AsteroidSpawner.SpawnAsteroid(_numberOfAsteroids, "BigAsteroids", asteroidStartPosition);
+    }
+
+    private void StopGame()
+    {
+        
     }
 
     private void PauseGame()

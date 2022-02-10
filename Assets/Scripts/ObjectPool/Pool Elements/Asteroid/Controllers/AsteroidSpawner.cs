@@ -10,6 +10,7 @@ public class AsteroidSpawner : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             var newAsteroid = Pool.GetElementFromPool(type);
+            newAsteroid.gameObject.SetActive(true);
             newAsteroid.transform.position = spawnPoint;
             SetUpNewAsteroid(newAsteroid);
         }
