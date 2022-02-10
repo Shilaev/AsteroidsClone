@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace ObjectPool
@@ -21,16 +22,11 @@ namespace ObjectPool
         #endregion
 
         #region PrivateMethods
-        private void Start()
-        {
-            GameManager.instance.OnGameSetup.AddListener(Initialise);
-        }
-
         /// <summary>
         /// Create and prepare all pools,
         /// using scriptable object pool templates
         /// </summary>
-        private void Initialise()
+        internal void Initialise()
         {
             foreach (var poolSo in _pools_so)
             {
@@ -69,7 +65,7 @@ namespace ObjectPool
         /// Add element in pool
         /// </summary>
         /// <param name="poolElement"></param>
-        private void AddElement(PoolElement poolElement)
+        public void AddElement(PoolElement poolElement)
         {
             var element = Instantiate(poolElement);
             element.gameObject.SetActive(false);
@@ -79,21 +75,29 @@ namespace ObjectPool
         private PoolElement GetFreeElement()
         {
             foreach (var poolElement in _poolElements)
+            {
                 if (poolElement.gameObject.activeInHierarchy == false)
+                {
                     return poolElement;
+                }
+            }
 
             if (_isAutoExpand)
+            {
                 AddElement(_poolElements[0]);
+            }
 
-            throw new Exception($"No elements in {_tag} pool");
+            return _poolElements.Last();
+            //throw new Exception($"no free elements in pool {_tag}");
         }
         #endregion
 
         #region PublicMethods
-        public static GameObject GetElementFromPoolWithTag(string tag)
+        public static GameObject GetElementFromPool(string poolName)
         {
             foreach (var pool in _pools)
-                if (pool._tag == tag)
+            {
+                if (pool._tag == poolName)
                 {
                     var spawnObject = pool.GetFreeElement().gameObject;
 
@@ -103,8 +107,9 @@ namespace ObjectPool
                         return spawnObject;
                     }
                 }
+            }
 
-            throw new Exception($"pool with tag '{tag}' is empty.");
+            throw new Exception($"pool with tag '{poolName}' is empty.");
         }
         #endregion
     }

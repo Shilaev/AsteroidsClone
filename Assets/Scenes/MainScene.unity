@@ -152,9 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907bed7977483a14d805dc39c12fa9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _pool: {fileID: 1987752781}
+  _numberOfAsteroids: 30
 --- !u!4 &107372585
 Transform:
   m_ObjectHideFlags: 0
@@ -372,11 +371,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3481672501260026697, guid: 0c12468cb59053742a1678833730ba92, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 3481672501260026697, guid: 0c12468cb59053742a1678833730ba92, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 3481672501260026697, guid: 0c12468cb59053742a1678833730ba92, type: 3}
       propertyPath: m_LocalPosition.z

@@ -1,18 +1,18 @@
-using System;
+using CameraFeatures;
+using ObjectPool;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-
-    public UnityEvent OnGameSetup = new UnityEvent();
-    public UnityEvent OnGameStart = new UnityEvent();
-
     public enum GameState
     {
     }
+
+    public static GameManager instance;
+
+    [SerializeField] private Pool _pool;
+    [SerializeField] private int _numberOfAsteroids;
 
     private void Awake()
     {
@@ -22,14 +22,19 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("Press F to start game");
+        SetUpGame();
+        Debug.Log("Press f to start game");
     }
 
     private void Update()
     {
+        if (Mouse.current.leftButton.wasReleasedThisFrame)
+        {
+            AsteroidSpawner.SpawnAsteroid(1, "BigAsteroids", Vector3.zero);
+        }
+
         if (Keyboard.current.fKey.wasReleasedThisFrame)
         {
-            SetUpGame();
             StartGame();
         }
     }
@@ -40,12 +45,16 @@ public class GameManager : MonoBehaviour
 
     private void SetUpGame()
     {
-        OnGameSetup?.Invoke();
+        // Create and prepare all object pools
+        _pool.Initialise();
     }
 
     private void StartGame()
     {
-        OnGameStart?.Invoke();
+        // Spawn asteroids
+        var asteroidStartPosition = new Vector2(CameraBordersChecker.screenInCameraCoordsX + 20f,
+                   CameraBordersChecker.screenInCameraCoordsY + 20f);
+        AsteroidSpawner.SpawnAsteroid(_numberOfAsteroids, "BigAsteroids", asteroidStartPosition);
     }
 
     private void PauseGame()

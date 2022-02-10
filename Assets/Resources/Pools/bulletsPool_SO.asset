@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BulletsPool_SO
   m_EditorClassIdentifier: 
   tag: Bullet
-  size: 30
-  isAutoExpand: 0
+  size: 20
+  isAutoExpand: 1
   prefab: {fileID: 2113789492611270251, guid: 2e45d30e3c493b241bdf141712f77e30, type: 3}

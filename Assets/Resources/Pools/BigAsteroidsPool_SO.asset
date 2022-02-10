@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BigAsteroidsPool_SO
   m_EditorClassIdentifier: 
   tag: BigAsteroids
-  size: 40
-  isAutoExpand: 0
+  size: 20
+  isAutoExpand: 1
   prefab: {fileID: 3564356995875202146, guid: bee0c7a1ee3545949adce97e16148c92, type: 3}

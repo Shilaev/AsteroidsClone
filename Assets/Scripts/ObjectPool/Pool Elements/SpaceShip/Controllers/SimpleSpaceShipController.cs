@@ -60,7 +60,7 @@ public class SimpleSpaceShipController : MonoBehaviour
 
     private void HandleFire()
     {
-        var spawnObject = Pool.GetElementFromPoolWithTag("Bullet");
+        var spawnObject = Pool.GetElementFromPool("Bullet");
         spawnObject.transform.position = _aim.position;
         spawnObject.GetComponent<Rigidbody2D>().velocity = transform.up * _bulletVelocity;
     }
