@@ -3,7 +3,7 @@ using ObjectPool;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class SpaceShip : PoolElement
+public abstract class SpaceShip : MonoBehaviour
 {
     [SerializeField] private int _hp;
 

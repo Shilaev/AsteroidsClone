@@ -2,7 +2,7 @@
 
 namespace ObjectPool
 {
-    public abstract class Asteroid : PoolElement
+    public abstract class Asteroid : MonoBehaviour
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
