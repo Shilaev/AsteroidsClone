@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Pool _pool;
     [SerializeField] private int _numberOfAsteroids;
+    [SerializeField] private Menu _menu;
+    [SerializeField] private UI _ui;
+    [SerializeField] private SpaceShip _userSpaceShip;
 
     private void Awake()
     {
@@ -38,26 +41,40 @@ public class GameManager : MonoBehaviour
     {
     }
 
-    private void SetUpGame()
+    public void SetUpGame()
     {
         // Create and prepare all object pools
         _pool.Initialise();
+
+        // show menu text
+        _menu.StartGameText.gameObject.SetActive(true);
+
+        // set up ui
+        _ui.UserHp.text = _userSpaceShip.Hp.ToString();
+        _userSpaceShip.OnHpChanged.AddListener(delegate
+        {
+            _ui.UserHp.text = _userSpaceShip.Hp.ToString();
+        });
+        
     }
 
-    private void StartGame()
+    public void StartGame()
     {
+        // hide menu text
+        _menu.StartGameText.gameObject.SetActive(false);
+
         // Spawn asteroids
         var asteroidStartPosition = new Vector2(CameraBordersChecker.screenInCameraCoordsX + 20f,
                    CameraBordersChecker.screenInCameraCoordsY + 20f);
         AsteroidSpawner.SpawnAsteroid(_numberOfAsteroids, "BigAsteroids", asteroidStartPosition);
     }
 
-    private void StopGame()
+    public void StopGame()
     {
         
     }
 
-    private void RestartGame()
+    public void RestartGame()
     {
 
     }
