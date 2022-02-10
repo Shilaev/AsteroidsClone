@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\ObjectPool\Pool Elements\SpaceShip\SpaceShips\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersTeleporter.cs" />
     <Compile Include="Assets\Scripts\UI\Menu.cs" />
+    <Compile Include="Assets\Scripts\UI\UI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
