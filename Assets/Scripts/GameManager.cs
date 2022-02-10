@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Pool _pool;
     [SerializeField] private int _numberOfAsteroids;
+    [SerializeField] private Menu _menu;
 
     private void Awake()
     {
@@ -42,10 +43,16 @@ public class GameManager : MonoBehaviour
     {
         // Create and prepare all object pools
         _pool.Initialise();
+
+        // show ui text
+        _menu.StartGameText.gameObject.SetActive(true);
     }
 
     private void StartGame()
     {
+        // hide ui text
+        _menu.StartGameText.gameObject.SetActive(false);
+
         // Spawn asteroids
         var asteroidStartPosition = new Vector2(CameraBordersChecker.screenInCameraCoordsX + 20f,
                    CameraBordersChecker.screenInCameraCoordsY + 20f);
