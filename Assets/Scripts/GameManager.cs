@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void RestartGame()
+    {
+
+    }
+
     private void PauseGame()
     {
     }

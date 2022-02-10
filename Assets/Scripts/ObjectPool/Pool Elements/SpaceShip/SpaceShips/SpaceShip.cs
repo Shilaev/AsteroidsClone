@@ -1,7 +1,5 @@
-using System;
 using ObjectPool;
 using UnityEngine;
-using UnityEngine.Events;
 
 public abstract class SpaceShip : PoolElement
 {

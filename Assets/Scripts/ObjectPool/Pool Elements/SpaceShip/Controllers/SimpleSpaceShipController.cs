@@ -42,8 +42,10 @@ public class SimpleSpaceShipController : MonoBehaviour
         var isRotationLeftHeld = _input.SpaceShip.RotationLeft.ReadValue<float>() > 0.1f;
         var isRotationRightHeld = _input.SpaceShip.RotationRight.ReadValue<float>() > 0.1f;
 
-        if (isRotationLeftHeld) _spaceShip.GetComponent<Transform>().Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
-        if (isRotationRightHeld) _spaceShip.GetComponent<Transform>().Rotate(Vector3.back, _rotationSpeed * Time.deltaTime);
+        if (isRotationLeftHeld)
+            _spaceShip.GetComponent<Transform>().Rotate(Vector3.forward, _rotationSpeed * Time.deltaTime);
+        if (isRotationRightHeld)
+            _spaceShip.GetComponent<Transform>().Rotate(Vector3.back, _rotationSpeed * Time.deltaTime);
     }
 
     private void HandlePowerUp()
@@ -56,7 +58,6 @@ public class SimpleSpaceShipController : MonoBehaviour
             _spaceShipRB.AddRelativeForce(Vector2.up * Time.deltaTime * _movementSpeed, ForceMode2D.Force);
         }
     }
-
 
     private void HandleFire()
     {
