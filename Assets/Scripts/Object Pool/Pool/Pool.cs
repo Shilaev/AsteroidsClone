@@ -17,8 +17,8 @@ namespace ObjectPool
         private string _tag;
         private int _size;
         private bool _isAutoExpand;
-        private PoolElement _poolElement;
-        private List<PoolElement> _poolElements;
+        private GameObject _poolElement;
+        private List<GameObject> _poolElements;
         #endregion
 
         #region PrivateMethods
@@ -43,13 +43,13 @@ namespace ObjectPool
         /// <param name="size"></param>
         /// <param name="isAutoExpand"></param>
         /// <param name="poolElement"></param>
-        private void AddPool(string tag, int size, bool isAutoExpand, PoolElement poolElement)
+        private void AddPool(string tag, int size, bool isAutoExpand, GameObject poolElement)
         {
             _tag = tag;
             _size = size;
             _isAutoExpand = isAutoExpand;
             _poolElement = poolElement;
-            _poolElements = new List<PoolElement>();
+            _poolElements = new List<GameObject>();
 
             foreach (var poolSo in _pools_so)
             {
@@ -64,15 +64,15 @@ namespace ObjectPool
         /// <summary>
         /// Add element in pool
         /// </summary>
-        /// <param name="poolElement"></param>
-        public void AddElement(PoolElement poolElement)
+        /// <param name="element"></param>
+        public void AddElement(GameObject element)
         {
-            var element = Instantiate(poolElement);
-            element.gameObject.SetActive(false);
-            _poolElements.Add(element);
+            var temp = Instantiate(element);
+            temp.gameObject.SetActive(false);
+            _poolElements.Add(temp);
         }
 
-        private PoolElement GetFreeElement()
+        private GameObject GetFreeElement()
         {
             foreach (var poolElement in _poolElements)
             {

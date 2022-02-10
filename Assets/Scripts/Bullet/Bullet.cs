@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ObjectPool
 {
     [AddComponentMenu("Object Pool/Pool element/Bullet")]
-    public class Bullet : PoolElement
+    public class Bullet : MonoBehaviour
     {
         private void Update()
         {

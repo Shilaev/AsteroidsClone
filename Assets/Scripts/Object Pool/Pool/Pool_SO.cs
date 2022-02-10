@@ -8,6 +8,6 @@ namespace ObjectPool
         public string tag;
         public int size;
         public bool isAutoExpand;
-        public PoolElement prefab;
+        public GameObject prefab;
     }
 }

@@ -15,4 +15,4 @@ MonoBehaviour:
   tag: BigAsteroids
   size: 20
   isAutoExpand: 1
-  prefab: {fileID: 3564356995875202146, guid: bee0c7a1ee3545949adce97e16148c92, type: 3}
+  prefab: {fileID: 185008084903420780, guid: bee0c7a1ee3545949adce97e16148c92, type: 3}
