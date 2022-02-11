@@ -1,3 +1,4 @@
+using System;
 using CameraFeatures;
 using ObjectPool;
 using UnityEngine;
@@ -6,10 +7,6 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    public enum GameState
-    {
-    }
-
     public static GameManager instance;
 
     [SerializeField] private Pool _pool;
@@ -18,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UI _ui;
     [SerializeField] private SpaceShip _userSpaceShip;
 
-    public UnityEvent OnGameStoped;
+    public UnityEvent OnGameStop;
     public UnityEvent OnGamePaused;
 
     private void Awake()
@@ -35,11 +32,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Keyboard.current.fKey.wasReleasedThisFrame) StartGame();
-        if (Keyboard.current.yKey.wasReleasedThisFrame) StopGame();
-    }
-
-    private void SetGameState(GameState gameState)
-    {
+        if (Keyboard.current.escapeKey.wasReleasedThisFrame) StopGame();
     }
 
     public void SetUpGame()
@@ -64,26 +57,22 @@ public class GameManager : MonoBehaviour
         var spawnPoint = new Vector2(CameraBordersChecker.screenInCameraCoordsX + 20f,
             CameraBordersChecker.screenInCameraCoordsY + 20f);
         AsteroidManager.SpawnAsteroid(_numberOfAsteroids, "BigAsteroids", spawnPoint);
+
+        // Asteroids count hp setup
+        _ui.EnableAsteroids.text = (_numberOfAsteroids * 2).ToString();
+        _ui.AllAsteroidsCount.text = (_numberOfAsteroids * 2).ToString();
+    }
+
+    public void SubstractOneAsteroidFromUi()
+    {
+        var value = Convert.ToInt32(_ui.EnableAsteroids.text);
+        value--;
+        _ui.EnableAsteroids.text = value.ToString();
     }
 
     public void StopGame()
     {
-        OnGameStoped?.Invoke();
-    }
-
-    public void RestartGame()
-    {
-    }
-
-    private void PauseGame()
-    {
-    }
-
-    private void NextLevel()
-    {
-    }
-
-    private void ChangeScene()
-    {
+        _menu.StartGameText.gameObject.SetActive(true);
+        OnGameStop?.Invoke();
     }
 }

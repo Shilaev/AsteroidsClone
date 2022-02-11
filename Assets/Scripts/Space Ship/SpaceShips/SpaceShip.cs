@@ -3,9 +3,10 @@ using UnityEngine.Events;
 
 public abstract class SpaceShip : MonoBehaviour
 {
-    public UnityEvent OnHpChanged;
-    private int _currentHp;
     public int Hp { get; private set; }
+    private int _currentHp;
+
+    public UnityEvent OnHpChanged;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public abstract class SpaceShip : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.OnGameStoped.AddListener(ResetSpaceShip);
+        GameManager.instance.OnGameStop.AddListener(ResetSpaceShip);
     }
 
     private void Update()

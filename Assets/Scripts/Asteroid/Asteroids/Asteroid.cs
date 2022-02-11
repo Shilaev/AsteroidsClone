@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ObjectPool
 {
@@ -7,7 +8,7 @@ namespace ObjectPool
     {
         private void Start()
         {
-            GameManager.instance.OnGameStoped.AddListener(delegate { gameObject.SetActive(false); });
+            GameManager.instance.OnGameStop.AddListener(delegate { gameObject.SetActive(false); });
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -15,6 +16,7 @@ namespace ObjectPool
             if (other.tag == "Bullet")
             {
                 gameObject.SetActive(false);
+                GameManager.instance.SubstractOneAsteroidFromUi();
             }
         }
     }
