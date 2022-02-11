@@ -2,13 +2,13 @@ using ObjectPool;
 using UnityEngine;
 
 [AddComponentMenu("Controllers/AsteroidSpawner")]
-public class AsteroidSpawner : MonoBehaviour
+public class AsteroidManager : MonoBehaviour
 {
     public static void SpawnAsteroid(int amount, string type, Vector3 spawnPoint)
     {
         for (int i = 0; i < amount; i++)
         {
-            var newAsteroid = Pool.GetElementFromPool(type);
+            var newAsteroid = Pool.GetFreeElementFromPool(type);
             newAsteroid.gameObject.SetActive(true);
             newAsteroid.transform.position = spawnPoint;
             SetUpNewAsteroid(newAsteroid);

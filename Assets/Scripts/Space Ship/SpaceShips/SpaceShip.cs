@@ -1,30 +1,43 @@
-using System;
-using ObjectPool;
 using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class SpaceShip : MonoBehaviour
 {
-    [SerializeField] private int _hp;
-
-    public int Hp => _hp;
-
     public UnityEvent OnHpChanged;
+    private int _currentHp;
+    public int Hp { get; private set; }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void Awake()
     {
-        if (other.tag == "Asteroid")
-        {
-            _hp--;
-            OnHpChanged?.Invoke();
-        }
+        Hp = 2;
+        _currentHp = Hp;
+    }
+
+    private void Start()
+    {
+        GameManager.instance.OnGameStoped.AddListener(ResetSpaceShip);
     }
 
     private void Update()
     {
-        if (_hp<=0)
+        if (_currentHp != Hp)
         {
-            gameObject.SetActive(false);
+            OnHpChanged?.Invoke();
+            _currentHp = Hp;
         }
+
+        if (Hp <= 0) gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Asteroid") Hp--;
+    }
+
+    private void ResetSpaceShip()
+    {
+        transform.position = Vector3.zero;
+        transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        transform.rotation = Quaternion.identity;
     }
 }

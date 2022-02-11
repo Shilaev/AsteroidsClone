@@ -10,7 +10,7 @@ namespace ObjectPool
             if (other.tag == "Bullet")
             {
                 gameObject.SetActive(false);
-                AsteroidSpawner.SpawnAsteroid(2, "SmallAsteroids", this.transform.position);
+                AsteroidManager.SpawnAsteroid(2, "SmallAsteroids", this.transform.position);
             }
         }
     }

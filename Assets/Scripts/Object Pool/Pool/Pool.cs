@@ -72,11 +72,11 @@ namespace ObjectPool
             _poolElements.Add(temp);
         }
 
-        private GameObject GetFreeElement()
+        private GameObject GetElement(bool elementActiveState)
         {
             foreach (var poolElement in _poolElements)
             {
-                if (poolElement.gameObject.activeInHierarchy == false)
+                if (poolElement.gameObject.activeInHierarchy == elementActiveState)
                 {
                     return poolElement;
                 }
@@ -93,13 +93,13 @@ namespace ObjectPool
         #endregion
 
         #region PublicMethods
-        public static GameObject GetElementFromPool(string poolName)
+        public static GameObject GetFreeElementFromPool(string poolName)
         {
             foreach (var pool in _pools)
             {
                 if (pool._tag == poolName)
                 {
-                    var spawnObject = pool.GetFreeElement().gameObject;
+                    var spawnObject = pool.GetElement(false).gameObject;
 
                     if (spawnObject != null)
                     {
@@ -108,7 +108,7 @@ namespace ObjectPool
                 }
             }
 
-            throw new Exception($"pool with tag '{poolName}' is empty.");
+            throw new Exception($"No one free elements in pool  '{poolName}'.");
         }
         #endregion
     }

@@ -64,14 +64,14 @@
     <Compile Include="Assets\InputSystem\InputSystem.cs" />
     <Compile Include="Assets\Scripts\Asteroid\Asteroids\BigAsteroid.cs" />
     <Compile Include="Assets\Scripts\Space Ship\SpaceShips\SimpleSpaceShip.cs" />
-    <Compile Include="Assets\Scripts\Asteroid\Controllers\AsteroidSpawner.cs" />
+    <Compile Include="Assets\Scripts\Asteroid\Controllers\AsteroidManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersChecker.cs" />
+    <Compile Include="Assets\Scripts\UI Elements\Menu.cs" />
+    <Compile Include="Assets\Scripts\UI Elements\UI.cs" />
     <Compile Include="Assets\Scripts\Space Ship\Controllers\SimpleSpaceShipController.cs" />
     <Compile Include="Assets\Scripts\Space Ship\SpaceShips\SpaceShip.cs" />
     <Compile Include="Assets\Scripts\Camera Features\CameraBordersTeleporter.cs" />
-    <Compile Include="Assets\Scripts\UI Elements\Menu.cs" />
-    <Compile Include="Assets\Scripts\UI Elements\UI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
