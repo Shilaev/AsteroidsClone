@@ -7,6 +7,7 @@ public abstract class SpaceShip : MonoBehaviour
     private int _currentHp;
 
     public UnityEvent OnHpChanged;
+    public UnityEvent OnShipDestroyed;
 
     private void Awake()
     {
@@ -16,7 +17,7 @@ public abstract class SpaceShip : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.OnGameStop.AddListener(ResetSpaceShip);
+
     }
 
     private void Update()
@@ -27,7 +28,11 @@ public abstract class SpaceShip : MonoBehaviour
             _currentHp = Hp;
         }
 
-        if (Hp <= 0) gameObject.SetActive(false);
+        if (Hp <= 0)
+        {
+            OnShipDestroyed?.Invoke();
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -37,6 +42,7 @@ public abstract class SpaceShip : MonoBehaviour
 
     private void ResetSpaceShip()
     {
+        gameObject.SetActive(true);
         transform.position = Vector3.zero;
         transform.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         transform.rotation = Quaternion.identity;
