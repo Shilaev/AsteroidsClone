@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
         // Space ship hp setup
         _ui.UserHp.text = _userSpaceShip.Hp.ToString();
         _userSpaceShip.OnHpChanged.AddListener(delegate { _ui.UserHp.text = _userSpaceShip.Hp.ToString(); });
+
+        _userSpaceShip.OnShipDestroyed.AddListener(delegate
+        {
+            StopGame();
+        });
     }
 
     public void StartGame()
